@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="estilos.css" />
+	<title>Formulario</title>
+	<script>
+		function passvalues()
+		{
+			var nombre = document.getElementById("nombre").value;
+			var telefono = document.getElementById("telefono").value;
+			var email = document.getElementById("email").value;
+			var password = document.getElementById("password").value;
+
+			if(nombre.length>50)
+			{
+				alert("El campo nombre es demasiado largo");
+				return false;
+			}	
+			if(password.length<8)
+			{
+				alert("El password debe tener al menos 8 caracteres");
+				return false;
+			}				
+			localStorage.setItem("Nombre", nombre);
+			localStorage.setItem("Telefono", telefono);
+			localStorage.setItem("Email", email);
+			localStorage.setItem("Password", password);
+			return false;
+		}
+	</script>
+<body>
+	<div class="center">
+	<form action="recepcionDatos.html">
+<table>
+    <tr>
+        <td class="titulo">Nombre</td>
+        <td>
+            <input type="text" id="nombre" placeholder="Nombre" maxlenght="50" pattern="^([A-Z]{1}[a-zñáéíóú]+[\s]*)+$" required/>
+        </td>
+    </tr>
+    <tr>
+    	<td class="titulo">Telefono</td>
+        <td>
+            <input type="tel" id="telefono" placeholder="Telefono" pattern="[0-9]{9}" required oninvalid="this.setCustomValidity('El telefono debe tener 9 digitos')"/>
+        </td>
+    </tr>
+    <tr>
+    	<td class="titulo">Email</td>
+        <td>
+            <input type="email" id="email" placeholder="Email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,3}" required oninvalid="this.setCustomValidity('El email no tiene un formato correcto')"/>
+        </td>
+    </tr>
+    <tr>
+    	<td class="titulo">Contraseña</td>
+        <td>
+            <input type="password" id="password" placeholder="Contraseña" minlength="8" pattern="^(?=.{8,}$)(?=.*?[A-Z])(?=.*?[0-9])(?=.*?\W).*$"required/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Validar" onclick="passvalues();"/>
+        </td>
+    </tr>
+</table>
+</form>
+</div>
+</body>
+</head>
+</html>

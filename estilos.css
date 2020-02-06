@@ -1,0 +1,18 @@
+.center {
+  margin: auto;
+  width: 50%;
+}
+
+.titulo {
+	font-family: calibri;
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #337AFF;
+}
+
+.resultados {
+	font-family: tahoma;   
+	font-weight: 100; 
+    color: #238E2B;
+     font-size: 0.85em;
+}

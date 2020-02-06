@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="estilos.css" />
+	<title>Recepcion datos</title>
+	
+<body>
+	<div class="center">
+    <div><span class="titulo">Nombre:</span><span class="resultados" id = "nombre"></span></div>
+    
+    <div><span class="titulo">Telefono:</span><span class="resultados" id = "telefono"></span></div>
+    
+    <div><span class="titulo">Email:</span><span class="resultados" id = "email"></span></div>
+    
+    <div><span class="titulo">Password:</span><span class="resultados" id = "password"></span></div>
+    </div>
+    
+    <script type="text/javascript">
+        document.getElementById("nombre").innerHTML = localStorage.getItem("Nombre");
+        document.getElementById("telefono").innerHTML = localStorage.getItem("Telefono");
+        document.getElementById("email").innerHTML = localStorage.getItem("Email");
+        document.getElementById("password").innerHTML = localStorage.getItem("Password");
+    </script>
+</body>
+</head>
+</html>
