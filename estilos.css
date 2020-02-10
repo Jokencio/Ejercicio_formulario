@@ -10,6 +10,10 @@
     color: #337AFF;
 }
 
+input:invalid:required {
+  border: 2px dashed red;
+}
+
 .resultados {
 	font-family: tahoma;   
 	font-weight: 100; 

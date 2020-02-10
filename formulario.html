@@ -37,7 +37,7 @@
     <tr>
         <td class="titulo">Nombre</td>
         <td>
-            <input type="text" id="nombre" placeholder="Nombre" maxlenght="50" pattern="^([A-Z]{1}[a-zñáéíóú]+[\s]*)+$" required/>
+            <input type="text" id="nombre" placeholder="Nombre" maxlenght="50" pattern="^([A-Z]{1}[a-zñáéíóú]+[\s]*)+$" required oninvalid="this.setCustomValidity('El nombre no puede tener más de 50 caracteres')"/>
         </td>
     </tr>
     <tr>
@@ -55,7 +55,7 @@
     <tr>
     	<td class="titulo">Contraseña</td>
         <td>
-            <input type="password" id="password" placeholder="Contraseña" minlength="8" pattern="^(?=.{8,}$)(?=.*?[A-Z])(?=.*?[0-9])(?=.*?\W).*$"required/>
+            <input type="password" id="password" placeholder="Contraseña" minlength="8" pattern="^(?=.{8,}$)(?=.*?[A-Z])(?=.*?[0-9])(?=.*?\W).*$" required/>
         </td>
     </tr>
     <tr>
