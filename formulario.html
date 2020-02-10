@@ -22,45 +22,41 @@
 				alert("El password debe tener al menos 8 caracteres");
 				return false;
 			}				
-			localStorage.setItem("Nombre", nombre);
-			localStorage.setItem("Telefono", telefono);
-			localStorage.setItem("Email", email);
-			localStorage.setItem("Password", password);
-			
+						
 			return false;
 		}
 	</script>
 <body>
 	<div class="center">
-	<form action="recepcionDatos.html">
+	<form action="recepcionDatos.html" method="GET" name="formulario" id="formulario">
 <table>
     <tr>
         <td class="titulo">Nombre</td>
         <td>
-            <input type="text" id="nombre" placeholder="Nombre" maxlenght="50" pattern="^([A-Z]{1}[a-zñáéíóú]+[\s]*)+$" required oninvalid="this.setCustomValidity('El nombre no puede tener más de 50 caracteres')"/>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" maxlenght="50" pattern="^([A-Z]{1}[a-zñáéíóú]+[\s]*)+$" required oninvalid="this.setCustomValidity('El nombre no puede tener más de 50 caracteres')"/>
         </td>
     </tr>
     <tr>
     	<td class="titulo">Telefono</td>
         <td>
-            <input type="tel" id="telefono" placeholder="Telefono" pattern="[0-9]{9}" required oninvalid="this.setCustomValidity('El telefono debe tener 9 digitos')"/>
+            <input type="tel" id="telefono" name="telefono"placeholder="Telefono" pattern="[0-9]{9}" required oninvalid="this.setCustomValidity('El telefono debe tener 9 digitos')"/>
         </td>
     </tr>
     <tr>
     	<td class="titulo">Email</td>
         <td>
-            <input type="email" id="email" placeholder="Email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,3}" required oninvalid="this.setCustomValidity('El email no tiene un formato correcto')"/>
+            <input type="email" id="email" name="email" placeholder="Email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,3}" required oninvalid="this.setCustomValidity('El email no tiene un formato correcto')"/>
         </td>
     </tr>
     <tr>
     	<td class="titulo">Contraseña</td>
         <td>
-            <input type="password" id="password" placeholder="Contraseña" minlength="8" pattern="^(?=.{8,}$)(?=.*?[A-Z])(?=.*?[0-9])(?=.*?\W).*$" required/>
+            <input type="password" id="password" name="password" placeholder="Contraseña" minlength="8" pattern="^(?=.{8,}$)(?=.*?[A-Z])(?=.*?[0-9])(?=.*?\W).*$" required oninvalid="this.setCustomValidity('El password debe tener al menos una mayúscula y un caracter especial')"/>
         </td>
     </tr>
     <tr>
         <td>
-            <input type="submit" value="Validar" onclick="passvalues();"/>
+            <input type="submit" name="submit" value="Validar" onclick="passvalues();"/>
         </td>
     </tr>
 </table>
